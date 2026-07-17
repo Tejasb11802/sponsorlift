@@ -48,7 +48,7 @@ streamlit run app\dashboard.py
 
 ## Why this approach
 
-Zoomph's own materials describe their methodology as needing to be "explainable and defensible" even though the underlying models are proprietary — the inputs have to hold up to a skeptical client's finance team. This project is built to the same standard: every assumption is a named, adjustable constant in the source, not a black box, and the ad-lift result is reported with its actual uncertainty rather than rounded up into a clean story.
+Zoomph's own materials describe their methodology as needing to be "explainable and defensible" even though the underlying models are proprietary. the inputs have to hold up to a skeptical client's finance team. This project is built to the same standard: every assumption is a named, adjustable constant in the source, not a black box, and the ad-lift result is reported with its actual uncertainty rather than rounded up into a clean story.
 
 ## What I'd do differently with more time / data
 
