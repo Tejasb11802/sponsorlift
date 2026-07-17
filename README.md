@@ -6,11 +6,11 @@ Built for a Data Scientist, Broadcast interview, to demonstrate the three hardes
 
 ## Case study
 
-Golden State Warriors × IREN Limited jersey patch, announced June 25, 2026 — the richest jersey sponsorship deal in North American sports history (~$50M/year). Real, publicly documented event, used as the basis for every analysis below.
+Golden State Warriors × IREN Limited jersey patch, announced June 25, 2026, the richest jersey sponsorship deal in North American sports history (~$50M/year). Real, publicly documented event, used as the basis for every analysis below.
 
 ## What's real vs. simulated
 
-This distinction is deliberate and disclosed everywhere it matters, not buried in a footnote — a measurement platform's numbers are only trustworthy if you know what's underneath them.
+This distinction is deliberate and disclosed everywhere it matters, not buried in a footnote, a measurement platform's numbers are only trustworthy if you know what's underneath them.
 
 | Component | Status | Why |
 |---|---|---|
@@ -42,7 +42,7 @@ streamlit run app\dashboard.py
 
 ## Key results
 
-- **Ad-lift (views, pooled across 3 controls):** -43.7% (95% CI: -73.3% to +18.8%), not statistically significant at n=1 event. Direction was consistent across all three control channels individually, which is reassuring, but a single-event sample can't support a confident causal claim — that limitation is the finding, not a bug in the analysis.
+- **Ad-lift (views, pooled across 3 controls):** -43.7% (95% CI: -73.3% to +18.8%), not statistically significant at n=1 event. Direction was consistent across all three control channels individually, which is reassuring, but a single-event sample can't support a confident causal claim, that limitation is the finding, not a bug in the analysis.
 - **Simulated broadcast media value:** $711,626 across 12 simulated broadcasts, using placeholder CPM/audience assumptions that are trivially swappable for a real rate card.
 - **Cross-screen reach overstatement:** naive summed reach overstates true unique audience by 2.4%–11.0% depending on the assumed overlap rate, which is the exact problem a cross-platform identity graph is built to solve.
 
@@ -53,7 +53,7 @@ Zoomph's own materials describe their methodology as needing to be "explainable 
 ## What I'd do differently with more time / data
 
 - More sponsorship events across more teams to get statistical power on the causal estimate
-- Replace the exposure simulation with real detection output (would need licensed broadcast footage + a fine-tuned object detector — a realistic next phase, not an overnight one)
+- Replace the exposure simulation with real detection output (would need licensed broadcast footage + a fine-tuned object detector, a realistic next phase, not an overnight one)
 - Calibrate the CPM rate against real ad-rate data and the overlap rate against a real panel or identity-resolution source
 - Add a time-series/event-study specification instead of a single pre/post window, to check the effect isn't concentrated in one anomalous week
 
