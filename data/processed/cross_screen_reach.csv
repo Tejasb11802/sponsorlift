@@ -1,0 +1,4 @@
+scenario,assumed_overlap_rate,broadcast_reach,social_reach,naive_summed_reach,estimated_overlap,deduplicated_unique_reach,naive_reach_overstatement_pct
+low_overlap,0.1,2520000,816220,3336220,81622,3254598,2.4
+mid_overlap,0.25,2520000,816220,3336220,204055,3132165,6.1
+high_overlap,0.45,2520000,816220,3336220,367299,2968921,11.0
