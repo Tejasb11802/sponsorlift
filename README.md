@@ -29,6 +29,26 @@ src/lift_model.py               → difference-in-differences ad-lift estimate, 
 src/dedup_model.py              → cross-screen reach, naive vs. deduplicated, swept across overlap assumptions
 app/dashboard.py                → Streamlit report tying all of the above together
 
+Data Flow:
+YouTube API → YouTube Engagement Data
+              ↓
+        Control Channel Selection (Bulls, Nets, Nuggets)
+              ↓
+        Difference-in-Differences Regression (log scale, HC1 robust SEs)
+              ↓
+        Ad-Lift Estimate + Confidence Intervals
+              ↓
+Broadcast Schedule → Simulated Logo Exposure Events
+                     (clarity, centrality, clutter, duration weighted)
+                            ↓
+                    CPM Rate Lookup
+                            ↓
+                    Equivalent Media Value ($711K)
+                            ↓
+        Cross-Screen Reach Model (broadcast + social, dedup overlap scenarios)
+              ↓
+        Streamlit Dashboard (KPIs, charts, methodology section)
+
 Run in order:
 
 ```cmd
