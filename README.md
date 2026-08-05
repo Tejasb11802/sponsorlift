@@ -20,34 +20,27 @@ This distinction is deliberate and disclosed everywhere it matters, not buried i
 | CPM rate / average broadcast audience | **Illustrative placeholder** | Not a licensed ad-rate benchmark. Configurable constants, clearly labeled in source |
 | Cross-screen audience overlap rate | **Assumed, swept across a range** | Real deduplication needs a cross-platform identity graph (device/login matching), which is exactly the kind of proprietary asset a company like Zoomph builds. Modeled here as a sensitivity range (10% / 25% / 45% overlap) instead of one invented precise number |
 
-## Pipeline
-
-src/ingest_youtube.py          → real YouTube engagement data (treatment + 3 control channels)
-src/generate_exposure_events.py → simulated broadcast logo-appearance events
-src/valuation_engine.py         → quality-weighted equivalent media value per broadcast
-src/lift_model.py               → difference-in-differences ad-lift estimate, pooled + per-control robustness
-src/dedup_model.py              → cross-screen reach, naive vs. deduplicated, swept across overlap assumptions
-app/dashboard.py                → Streamlit report tying all of the above together
-
+## Pipeline Architecture
 Data Flow:
+
 YouTube API → YouTube Engagement Data
-              ↓
-        Control Channel Selection (Bulls, Nets, Nuggets)
-              ↓
-        Difference-in-Differences Regression (log scale, HC1 robust SEs)
-              ↓
-        Ad-Lift Estimate + Confidence Intervals
-              ↓
+↓
+Control Channel Selection (Bulls, Nets, Nuggets)
+↓
+Difference-in-Differences Regression (log scale, HC1 robust SEs)
+↓
+Ad-Lift Estimate + Confidence Intervals
+↓
 Broadcast Schedule → Simulated Logo Exposure Events
-                     (clarity, centrality, clutter, duration weighted)
-                            ↓
-                    CPM Rate Lookup
-                            ↓
-                    Equivalent Media Value ($711K)
-                            ↓
-        Cross-Screen Reach Model (broadcast + social, dedup overlap scenarios)
-              ↓
-        Streamlit Dashboard (KPIs, charts, methodology section)
+(clarity, centrality, clutter, duration weighted)
+↓
+CPM Rate Lookup
+↓
+Equivalent Media Value ($711K)
+↓
+Cross-Screen Reach Model (broadcast + social, dedup overlap scenarios)
+↓
+Streamlit Dashboard (KPIs, charts, methodology section)
 
 Run in order:
 
