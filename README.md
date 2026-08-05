@@ -21,26 +21,18 @@ This distinction is deliberate and disclosed everywhere it matters, not buried i
 | Cross-screen audience overlap rate | **Assumed, swept across a range** | Real deduplication needs a cross-platform identity graph (device/login matching), which is exactly the kind of proprietary asset a company like Zoomph builds. Modeled here as a sensitivity range (10% / 25% / 45% overlap) instead of one invented precise number |
 
 ## Pipeline Architecture
-Data Flow:
 
-YouTube API → YouTube Engagement Data
-↓
-Control Channel Selection (Bulls, Nets, Nuggets)
-↓
-Difference-in-Differences Regression (log scale, HC1 robust SEs)
-↓
-Ad-Lift Estimate + Confidence Intervals
-↓
-Broadcast Schedule → Simulated Logo Exposure Events
-(clarity, centrality, clutter, duration weighted)
-↓
-CPM Rate Lookup
-↓
-Equivalent Media Value ($711K)
-↓
-Cross-Screen Reach Model (broadcast + social, dedup overlap scenarios)
-↓
-Streamlit Dashboard (KPIs, charts, methodology section)
+**Data Flow:**
+
+1. **YouTube API** → Real engagement data (Warriors + 3 control channels)
+2. **Control Channel Selection** → Bulls, Nets, Nuggets (no sponsorship changes)
+3. **Difference-in-Differences Regression** → log scale, HC1 robust standard errors
+4. **Ad-Lift Estimate** → -43.7% views (95% CI: -73.3% to +18.8%), not significant at n=1
+5. **Broadcast Schedule** → Simulated logo exposure events
+6. **Exposure Quality Weighting** → clarity × centrality × (1 - clutter) × duration
+7. **CPM Rate & Audience** → Equivalent Media Value ($711K across 12 games)
+8. **Cross-Screen Reach Model** → Broadcast + social, deduplicated across overlap scenarios
+9. **Streamlit Dashboard** → KPIs, charts, methodology & assumptions (first-class, not footnote)
 
 
 Run in order:
