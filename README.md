@@ -52,6 +52,15 @@ streamlit run app\dashboard.py
 - **Simulated broadcast media value:** $711,626 across 12 simulated broadcasts, using placeholder CPM/audience assumptions that are trivially swappable for a real rate card.
 - **Cross-screen reach overstatement:** naive summed reach overstates true unique audience by 2.4%–11.0% depending on the assumed overlap rate, which is the exact problem a cross-platform identity graph is built to solve.
 
+## Additional Case Studies
+
+To demonstrate generalizability across sports leagues and market sizes:
+
+- **[NBA: Warriors × IREN](CASE_STUDY_NBA.md)** — High-value marquee sponsorship, ~1.5M broadcast audience, $711K equivalent media value
+- **[MLS: LA Galaxy × Diageo](CASE_STUDY_MLS.md)** — Mid-market sponsorship, ~50K broadcast audience, $147K equivalent media value, shows methodology scales across league sizes
+
+Both demonstrate the same analytical approach (DiD regression, quality-weighted exposure, cross-screen dedup) with adjusted assumptions for different market contexts.
+
 ## Why this approach
 
 Zoomph's own materials describe their methodology as needing to be "explainable and defensible" even though the underlying models are proprietary. the inputs have to hold up to a skeptical client's finance team. This project is built to the same standard: every assumption is a named, adjustable constant in the source, not a black box, and the ad-lift result is reported with its actual uncertainty rather than rounded up into a clean story.
